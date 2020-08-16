@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Horace刚建的网站</title>
+  
+  <subtitle>HPI</subtitle>
+  <link href="http://yoursite.com/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2020-08-16T08:20:37.309Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>Horace</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>前言</title>
+    <link href="http://yoursite.com/2020/06/13/%E5%89%8D%E8%A8%80/"/>
+    <id>http://yoursite.com/2020/06/13/%E5%89%8D%E8%A8%80/</id>
+    <published>2020-06-13T10:05:14.000Z</published>
+    <updated>2020-08-16T08:20:37.309Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="你好鸭鸭鸭鸭鸭鸭！（炒鸡开心！）"><a href="#你好鸭鸭鸭鸭鸭鸭！（炒鸡开心！）" class="headerlink" title="你好鸭鸭鸭鸭鸭鸭！（炒鸡开心！）"></a>你好鸭鸭鸭鸭鸭鸭！（炒鸡开心！）</h2><p>这是一个[阅读全文]测试<br>  <a id="more"></a><br>  TEST<br>  <img src="/photos/IMG_2965.JPG" alt="这里是帅帅的HK学长！"></p><p>疯爷早些时候约我的短片piupiupiu<br>并不尽美，毕竟money和equipment不到位（剧组3个人嘿嘿嘿几乎没用一分钱）<br>第一次用达芬奇（我知道有些地方炸了噗）<br>鸣谢hk学长@IHKK（帮我们提器材噗）<br>还有zhn和wsx，他们借我的相机（是真·没用一分钱）<br>希望下次能做得更好啦！</p><div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;"><iframe src="//player.bilibili.com/player.html?aid=371485821&bvid=BV1hZ4y1T7ww&cid=216247032&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>]]></content>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;你好鸭鸭鸭鸭鸭鸭！（炒鸡开心！）&quot;&gt;&lt;a href=&quot;#你好鸭鸭鸭鸭鸭鸭！（炒鸡开心！）&quot; class=&quot;headerlink&quot; title=&quot;你好鸭鸭鸭鸭鸭鸭！（炒鸡开心！）&quot;&gt;&lt;/a&gt;你好鸭鸭鸭鸭鸭鸭！（炒鸡开心！）&lt;/h2&gt;&lt;p&gt;这是一个[阅读全文]测试&lt;br&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+</feed>
