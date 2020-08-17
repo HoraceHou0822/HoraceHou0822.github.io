@@ -15,7 +15,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"enable":true,"type":"valine","style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
   <meta property="og:type" content="website">
@@ -294,6 +294,7 @@
 
         
 
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <div class="copyright">
   
   &copy; 
@@ -303,8 +304,19 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Horace</span>
 </div>
+  <div class="powered-by">
+  <i class="fa fa-user-md"></i><span id="horacehou0822_container_site_pv">
+  本站访客数:<span id="horacehou0822_value_site_pv"></span>
+  </span>
+  </div>
+  
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
   </div>
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共130字</span>
+</div>
 
         
 
@@ -313,6 +325,92 @@
 
 
 
+<script>
+  (function() {
+    function leancloudSelector(url) {
+      url = encodeURI(url);
+      return document.getElementById(url).querySelector('.leancloud-visitors-count');
+    }
+
+    function addCount(Counter) {
+      var visitors = document.querySelector('.leancloud_visitors');
+      var url = decodeURI(visitors.id);
+      var title = visitors.dataset.flagTitle;
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length > 0) {
+            var counter = results[0];
+            leancloudSelector(url).innerText = counter.time + 1;
+            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
+              .catch(error => {
+                console.error('Failed to save visitor count', error);
+              });
+          } else {
+              leancloudSelector(url).innerText = 'Counter not initialized! More info at console err msg.';
+              console.error('ATTENTION! LeanCloud counter has security bug, see how to solve it here: https://github.com/theme-next/hexo-leancloud-counter-security. \n However, you can still use LeanCloud without security, by setting `security` option to `false`.');
+            
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    function showTime(Counter) {
+      var visitors = document.querySelectorAll('.leancloud_visitors');
+      var entries = [...visitors].map(element => {
+        return decodeURI(element.id);
+      });
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url: { '$in': entries } })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          for (let url of entries) {
+            let target = results.find(item => item.url === url);
+            leancloudSelector(url).innerText = target ? target.time : 0;
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    let { app_id, app_key, server_url } = {"enable":true,"app_id":"CC922JuJHg381ejdGPbT0fAv-gzGzoHsz","app_key":"NK7CYBqWWrKYmbumhXwHLo7U","server_url":null,"security":true};
+    function fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${api_server}/1.1${url}`, {
+          method,
+          headers: {
+            'X-LC-Id'     : app_id,
+            'X-LC-Key'    : app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      if (CONFIG.page.isPost) {
+        if (CONFIG.hostname !== location.hostname) return;
+        addCount(Counter);
+      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
+        showTime(Counter);
+      }
+    }
+
+    let api_server = app_id.slice(-9) !== '-MdYXbMMI' ? server_url : `https://${app_id.slice(0, 8).toLowerCase()}.api.lncldglobal.com`;
+
+    if (api_server) {
+      fetchData(api_server);
+    } else {
+      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
+        .then(response => response.json())
+        .then(({ api_server }) => {
+          fetchData('https://' + api_server);
+        });
+    }
+  })();
+</script>
 
 
       </div>
@@ -356,36 +454,26 @@
   
 
   
+H 21:00:16
 
   <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
   <script src="/js/src/Valine.min.js"></script>
-
-  <!--<script src="//unpkg.com/valine/dist/Valine.min.js"></script>-->
-  <!-- https://deserts.io/diy-a-comment-system/ -->
+  
   <script type="text/javascript">
     new Valine({
         lang: 'zh-cn',
-        admin_email: '1463651604@qq.com', //博主邮箱
+        admin_email: '1463651604@qq.com',
         el: '#comments' ,
         appId: 'CC922JuJHg381ejdGPbT0fAv-gzGzoHsz',
         appKey: 'NK7CYBqWWrKYmbumhXwHLo7U',
-        emoticon_url: 'https://cloud.panjunwen.com/alu',
-        emoticon_list: ["吐.png","喷血.png","狂汗.png","不说话.png","汗.png","坐等.png","献花.png","不高兴.png","中刀.png","害羞.png","皱眉.png","小眼睛.png","中指.png","尴尬.png","瞅你.png","想一想.png","中枪.png","得意.png","肿包.png","扇耳光.png","亲亲.png","惊喜.png","脸红.png","无所谓.png","便便.png","愤怒.png","蜡烛.png","献黄瓜.png","内伤.png","投降.png","观察.png","看不见.png","击掌.png","抠鼻.png","邪恶.png","看热闹.png","口水.png","抽烟.png","锁眉.png","装大款.png","吐舌.png","无奈.png","长草.png","赞一个.png","呲牙.png","无语.png","阴暗.png","不出所料.png","咽气.png","期待.png","高兴.png","吐血倒地.png","哭泣.png","欢呼.png","黑线.png","喜极而泣.png","喷水.png","深思.png","鼓掌.png","暗地观察.png"],
+        emoticon_url: 'https://hntr.xyz/img/emoji',
+        emoticon_list: ["bili_1.png","bili_45.png","qq-124.gif","qq-34.gif","qq-7.gif","tieba-15.png","bili_10.png","bili_46.png","qq-125.gif","qq-35.gif","qq-70.gif","tieba-16.png","bili_11.png","bili_47.png","qq-126.gif","qq-36.gif","qq-71.gif","tieba-17.png","bili_12.png","bili_48.png","qq-127.gif","qq-37.gif","qq-72.gif","tieba-18.png","bili_13.png","bili_49.png","qq-128.gif","qq-38.gif","qq-73.gif","tieba-19.png","bili_14.png","bili_5.png","qq-129.gif","qq-39.gif","qq-74.gif","tieba-2.png","bili_15.png","bili_6.png","qq-13.gif","qq-4.gif","qq-75.gif","tieba-20.png","bili_16.png","bili_7.png","qq-130.gif","qq-40.gif","qq-76.gif","tieba-21.png","bili_17.png","bili_8.png","qq-131.gif","qq-41.gif","qq-77.gif","tieba-22.png","bili_18.png","bili_9.png","qq-132.gif","qq-42.gif","qq-78.gif","tieba-23.png","bili_19.png","qq-133.gif","qq-43.gif","qq-79.gif","tieba-24.png","bili_2.png","qq-1.gif",	"qq-134.gif","qq-44.gif","qq-8.gif","tieba-25.png","bili_20.png","qq-10.gif","qq-135.gif","qq-45.gif","qq-80.gif","tieba-26.png","bili_21.png","qq-100.gif","qq-136.gif","qq-46.gif","qq-81.gif","tieba-27.png","bili_22.png","qq-101.gif","qq-137.gif","qq-47.gif","qq-82.gif","tieba-28.png","bili_23.png","qq-102.gif","qq-138.gif","qq-48.gif","qq-83.gif","tieba-29.png","bili_24.png","qq-103.gif","qq-139.gif","qq-49.gif","qq-84.gif","tieba-3.png","bili_25.png","qq-104.gif","qq-14.gif","qq-5.gif",	"qq-85.gif","tieba-30.png","bili_26.png","qq-105.gif","qq-15.gif","qq-50.gif","qq-86.gif","tieba-31.png","bili_27.png","qq-106.gif","qq-16.gif","qq-51.gif","qq-87.gif","tieba-32.png","bili_28.png","qq-107.gif","qq-17.gif","qq-52.gif","qq-88.gif","tieba-33.png","bili_29.png","qq-108.gif","qq-18.gif","qq-53.gif","qq-89.gif","tieba-34.png","bili_3.png","qq-109.gif","qq-19.gif","qq-54.gif","qq-9.gif","tieba-35.png","bili_30.png","qq-11.gif","qq-2.gif","qq-55.gif","qq-90.gif","tieba-36.png","bili_31.png","qq-110.gif","qq-20.gif","qq-56.gif","qq-91.gif","tieba-37.png","bili_32.png","qq-111.gif","qq-21.gif","qq-57.gif","qq-92.gif","tieba-38.png","bili_33.png","qq-112.gif","qq-22.gif","qq-58.gif","qq-93.gif","tieba-39.png","bili_34.png","qq-113.gif","qq-23.gif","qq-59.gif","qq-94.gif","tieba-4.png","bili_35.png","qq-114.gif","qq-24.gif","qq-6.gif",	"qq-95.gif","tieba-40.png","bili_36.png","qq-115.gif","qq-25.gif","qq-60.gif","qq-96.gif","tieba-41.png","bili_37.png","qq-116.gif","qq-26.gif","qq-61.gif","qq-97.gif","tieba-42.png","bili_38.png","qq-117.gif","qq-27.gif","qq-62.gif","qq-98.gif","tieba-43.png","bili_39.png","qq-118.gif","qq-28.gif","qq-63.gif","qq-99.gif","tieba-5.png","bili_4.png","qq-119.gif","qq-29.gif","qq-64.gif","tieba-1.png","tieba-6.png","bili_40.png","qq-12.gif","qq-3.gif","qq-65.gif","tieba-10.png","tieba-7.png","bili_41.png","qq-120.gif","qq-30.gif","qq-66.gif","tieba-11.png","tieba-8.png","bili_42.png","qq-121.gif","qq-31.gif","qq-67.gif","tieba-12.png","tieba-9.png","bili_43.png","qq-122.gif","qq-32.gif","qq-68.gif","tieba-13.png","bili_44.png","qq-123.gif","qq-33.gif","qq-69.gif","tieba-14.png"],
         placeholder: '咻咻咻！~(@^_^@)~',
   });
-
-  <!--点击邮件中的链接跳转至相应评论-->
-  if(window.location.hash){
-      var checkExist = setInterval(function() {
-         if ($(window.location.hash).length) {
-            $('html, body').animate({scrollTop: $(window.location.hash).offset().top-90}, 1000);
-            clearInterval(checkExist);
-         }
-      }, 100);
-   }
-
   </script>
 
 
+  
+  
 </body>
 </html>
