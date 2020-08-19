@@ -264,4 +264,25 @@
     
   </entry>
   
+  <entry>
+    <title>【散文】听雨杂感</title>
+    <link href="http://yoursite.com/1899/11/30/%E3%80%90%E6%95%A3%E6%96%87%E3%80%91%E5%90%AC%E9%9B%A8%E6%9D%82%E6%84%9F/"/>
+    <id>http://yoursite.com/1899/11/30/%E3%80%90%E6%95%A3%E6%96%87%E3%80%91%E5%90%AC%E9%9B%A8%E6%9D%82%E6%84%9F/</id>
+    <published>1899-11-29T15:55:00.000Z</published>
+    <updated>2020-08-19T10:48:42.616Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>显示在主页的前文</p><a id="more"></a><p>正文</p><h2 id="大标题"><a href="#大标题" class="headerlink" title="大标题"></a>大标题</h2><p><img src="/photos/%E8%87%AA%E5%B7%B1%E5%BB%BA%E4%B8%AA%E6%96%87%E4%BB%B6%E5%A4%B9/%E5%8C%85%E5%90%AB%E5%90%8E%E7%BC%80%E7%9A%84%E6%96%87%E4%BB%B6%E5%90%8D" alt="图片描述"></p><h1 id="小标题"><a href="#小标题" class="headerlink" title="小标题"></a>小标题</h1><p>空行:<br><br></p><h1 id="记得所有-号-号后面都要空一格"><a href="#记得所有-号-号后面都要空一格" class="headerlink" title="记得所有#号/:号后面都要空一格"></a>记得所有#号/:号后面都要空一格</h1><h2 id="视频必须在最后且只有一个"><a href="#视频必须在最后且只有一个" class="headerlink" title="视频必须在最后且只有一个"></a>视频必须在最后且只有一个</h2><div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">这一行粘贴bilibili视频分享里的嵌入码]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;显示在主页的前文&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="文学" scheme="http://yoursite.com/categories/%E6%96%87%E5%AD%A6/"/>
+    
+    
+    <category term="散文" scheme="http://yoursite.com/tags/%E6%95%A3%E6%96%87/"/>
+    
+  </entry>
+  
 </feed>
