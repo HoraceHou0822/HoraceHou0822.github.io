@@ -452,15 +452,6 @@
           
             
               
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/08/19/%E3%80%90%E5%BD%B1%E8%AF%84%E3%80%91%E8%B6%85%E8%84%B1%EF%BC%882011%EF%BC%8C%E6%89%98%E5%B0%BC%C2%B7%E5%87%AF%E8%80%B6%E5%AF%BC%E6%BC%94%EF%BC%89/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/08/19/%E3%80%90%E5%BD%B1%E8%AF%84%E3%80%91%E8%B6%85%E8%84%B1%EF%BC%882011%EF%BC%8C%E6%89%98%E5%B0%BC%C2%B7%E5%87%AF%E8%80%B6%E5%AF%BC%E6%BC%94%EF%BC%89/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
 
             
           
@@ -566,15 +557,6 @@
           
             
               
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/08/17/%E3%80%90%E8%A7%86%E9%A2%91%E3%80%91%E7%96%AF%E7%88%B7%E7%9A%84%E6%B1%89%E6%9C%8D/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/08/17/%E3%80%90%E8%A7%86%E9%A2%91%E3%80%91%E7%96%AF%E7%88%B7%E7%9A%84%E6%B1%89%E6%9C%8D/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
 
             
           
@@ -680,15 +662,6 @@
           
             
               
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/08/17/%E3%80%90%E7%A7%91%E6%99%AE%E3%80%91%E8%B6%85%E7%8E%B0%E5%AE%9E%E4%B8%BB%E4%B9%89/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/08/17/%E3%80%90%E7%A7%91%E6%99%AE%E3%80%91%E8%B6%85%E7%8E%B0%E5%AE%9E%E4%B8%BB%E4%B9%89/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
 
             
           
@@ -1315,72 +1288,54 @@
 
   
   
-<script src="https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/minivaline@3/dist/MiniValine.min.js"></script>
+
+
+
+
 
 
 <script>
-  var GUEST_INFO = ['nick', 'mail', 'link'];
-  var meta = 'nick,mail,link'.split(',').filter(function (item) {
-    return GUEST_INFO.indexOf(item) > -1
-  });
-  var REQUIRED_FIELDS = ['nick', 'mail', 'link'];
-  var requiredFields = 'nick,mail'.split(',').filter(function (item) {
-    return REQUIRED_FIELDS.indexOf(item) > -1
-  });
-
-  function emoji(path, idx, ext) {
-    return path + "/" + path + "-" + idx + "." + ext;
-  }
-
-  var emojiMaps = {};
-  for (var i = 1; i <= 54; i++) {
-    emojiMaps['tieba-' + i] = emoji('tieba', i, 'png');
-  }
-  for (var i = 1; i <= 101; i++) {
-    emojiMaps['qq-' + i] = emoji('qq', i, 'gif');
-  }
-  for (var i = 1; i <= 116; i++) {
-    emojiMaps['aru-' + i] = emoji('aru', i, 'gif');
-  }
-  for (var i = 1; i <= 125; i++) {
-    emojiMaps['twemoji-' + i] = emoji('twemoji', i, 'png');
-  }
-  for (var i = 1; i <= 4; i++) {
-    emojiMaps['weibo-' + i] = emoji('weibo', i, 'png');
-  }
-
-  function pjax_valine() {
-    let pageUrl = $.trim($('#pjax-comment-path').text()) === "none" ? 
+function pjax_minivaline() {
+  let pageUrl = $.trim($('#pjax-comment-path').text()) === "none" ? 
       decodeURI(window.location.pathname) : $.trim($('#pjax-comment-path').text());
-    let pagePlaceholder = $.trim($('#pjax-comment-placeholder').text()) === "none" ?
-      "快来评论吧~" : $.trim($('#pjax-comment-placeholder').text());
+  let pagePlaceholder = $.trim($('#pjax-comment-placeholder').text()) === "none" ?
+    "快来评论吧~" : $.trim($('#pjax-comment-placeholder').text());
 
-    let ALLPATH = '';
-    if(ALLPATH != '') pageUrl = ALLPATH;
+  let ALLPATH = '';
+  if(ALLPATH != '') pageUrl = ALLPATH;
 
-    var valine = new Valine();
-    valine.init({
-      el: '#valine_container',
-      meta: meta,
-      placeholder: pagePlaceholder,
-      path: pageUrl,
-      appId: "CC922JuJHg381ejdGPbT0fAv-gzGzoHsz",
-      appKey: "NK7CYBqWWrKYmbumhXwHLo7U",
-      pageSize: '10',
-      avatar: 'robohash',
-      lang: 'zh-cn',
-      visitor: 'true',
-      highlight: 'true',
-      mathJax: 'false',
-      enableQQ: 'true',
-      requiredFields: requiredFields,
-      emojiCDN: 'https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/valine/',
-      emojiMaps: emojiMaps
-    })
+  new MiniValine({
+    el: '#minivaline_container',
+    appId: 'CC922JuJHg381ejdGPbT0fAv-gzGzoHsz',
+    appKey: 'NK7CYBqWWrKYmbumhXwHLo7U',
+    mode: 'xCss',
+    placeholder: pagePlaceholder,
+    path: pageUrl,
+    lang: '',
+    adminEmailMd5: 'de8a7aa53d07e6b6bceb45c64027763d',
+    tagMeta: ["博主", "管理员", "小伙伴", "访客"],
+    master: ["0255aa46536b23bc877d0d9e8d871e88"],
+    friends: ["e846889207767f93e049a14a29a12d55"],
+    math: false,  /*布尔值 字符串无效 下同*/
+    md: true,
+    enableQQ: false,
+    NoRecordIP: false,
+    visitor: false,
+    maxNest: 6,
+    pageSize: 6,
+    barrager: 0,
+    role: 'admin',
+    closeFlag: false,
+    cloudflag: false,
+    region: false,
+    closeUA: false,
+    emoticonUrl: ["https://cdn.jsdelivr.net/npm/alus@latest", "https://cdn.jsdelivr.net/gh/MiniValine/qq@latest", "https://cdn.jsdelivr.net/gh/MiniValine/Bilibilis@latest", "https://cdn.jsdelivr.net/gh/MiniValine/tieba@latest", "https://cdn.jsdelivr.net/gh/MiniValine/twemoji@latest", "https://cdn.jsdelivr.net/gh/MiniValine/weibo@latest"],
+    serverURLs: ''
+    });
   }
-
   $(function () {
-    pjax_valine();
+    pjax_minivaline();
   });
 </script>
 
@@ -1662,8 +1617,8 @@
           pjax_initCopyCode();
         
         
-          pjax_valine();
         
+          pjax_minivaline();
         
         
         
