@@ -1139,30 +1139,148 @@
 
 
   
-    <article id="post-Plato_Theory of forms" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-mine" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2022/06/20/Plato_Theory%20of%20forms/">柏拉图：理念论|Plato:Theory of forms</a>
+      <a class="article-title" href="/2022/06/29/mine/">非常垃圾的计算器</a>
     </h1>
   
 
         
-        <a href="/2022/06/20/Plato_Theory%20of%20forms/" class="archive-article-date">
-  	<time datetime="2022-06-19T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-06-20</time>
+        <a href="/2022/06/29/mine/" class="archive-article-date">
+  	<time datetime="2022-06-28T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-06-29</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>理念论(The theory of Forms or theory of Ideas<a href="#1">[1]</a><a href="#2">[2]</a><a href="#3">[3]</a>)是一个柏拉图所创的哲学理论、概念或是说一种世界观，认为物质世界不像永恒、绝对、不变的理念世界那样真实。<a href="#4">[4]</a>根据这个理论，ideas在这种意义上一般被翻译成Ideas（理念）或是Forms（形式），<a href="#5">[5]</a>是所有事物的非物质的本质，而物质世界的对象和物质仅仅是对其的模仿。
         
-          <a class="article-more-a" href="/2022/06/20/Plato_Theory%20of%20forms/#more">more >></a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horace's Calculator</title>
+    <link href="css/new_file.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="js/new_file.js"></script>
+    <style>
         
+        body{
+            background: rgb(53, 172, 241);
+        }
+        h1{
+            font-family: Bradley Hand;
+            font-size: 50px;
+        }
+        #formula input{
+            width: 570px;
+            height: 25px;
+            margin-top: 0px;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            padding: 10px;
+            font-family: Chalkduster;
+            font-size: 20px;
+            border-color: aliceblue;
+            box-shadow: 2px 2px 10px rgb(24, 85, 143);
+        }
+        #body .button{
+            width: 80px;
+            height: 80px;
+            margin: 10px;
+            font-family: Chalkduster;
+            font-size: 25px;
+            box-shadow: 2px 2px 10px rgb(24, 85, 143);
+            border-color: aliceblue;
+            border-radius: 15px;
+        }
+        #body .button:hover{
+            width: 85px;
+            height: 85px;
+            margin: 0px;
+            font-family: Chalkduster;
+            font-size: 30px;
+            box-shadow: 5px 5px 15px rgb(14, 50, 83);
+            border-color: aliceblue;
+            border-radius: 15px;
+          
+        }
+    </style>
+    <script>
+        var str;
+        var result;
+        function formi(str0){
+            str = document.getElementById("text");
+            if(str.value=='0'||str.value=='+'||str.value=='-'||str.value=='*'||str.value=='/'||str.value==')'){
+                str.value='';
+            }else if(str.value=='.'){
+                str.value='0.'
+            }
+            str.value = str.value + str0;
+        }
+        function equals(){
+            str = document.getElementById("text");
+            result = eval(str.value);
+            str.value = result;
+            //str.value = '叶馨泽是sb';
+        }
+        function back(){
+            str = document.getElementById("text");
+            str.value = str.value.substring(0,str.value.length-1);
+        }
+        function reset(){
+            str = document.getElementById("text");
+            str.value = "";
+        }
+    </script>
+</head>
+
+
+<body>
+    <div id="calculator">
+        <div id="head" align="center"><h1>This is Horace's Calculator</h1></div>
+        <div id="formula" align="center"><input type="text" id="text" value="0"/></div>
+        <div id="body">
+            <table align="center">
+                <tr>
+                    <td><input type="button" class="button" value="1" onclick="formi(1)"/></td>
+                    <td><input type="button" class="button" value="2" onclick="formi(2)"/></td>
+                    <td><input type="button" class="button" value="3" onclick="formi(3)"/></td>
+                    <td><input type="button" class="button" value="+" onclick="formi('+')"/></td>
+                    <td><input type="button" class="button" value="-" onclick="formi('-')"/></td>
+                </tr>
+                <tr>
+                    <td><input type="button" class="button" value="4" onclick="formi(4)"/></td>
+                    <td><input type="button" class="button" value="5" onclick="formi(5)"/></td>
+                    <td><input type="button" class="button" value="6" onclick="formi(6)"/></td>
+                    <td><input type="button" class="button" value="*" onclick="formi('*')"/></td>
+                    <td><input type="button" class="button" value="/" onclick="formi('/')"/></td>
+                </tr>
+                <tr>
+                    <td><input type="button" class="button" value="7" onclick="formi(7)"/></td>
+                    <td><input type="button" class="button" value="8" onclick="formi(8)"/></td>
+                    <td><input type="button" class="button" value="9" onclick="formi(9)"/></td>
+                    <td><input type="button" class="button" value="(" onclick="formi('(')"/></td>
+                    <td><input type="button" class="button" value=")" onclick="formi(')')"/></td>
+                </tr>
+                <tr>
+                    <td><input type="button" class="button" value="." onclick="formi('.')"/></td>
+                    <td><input type="button" class="button" value="0" onclick="formi(0)"/></td>
+                    <td><input type="button" class="button" value="←" onclick="back()"/></td>
+                    <td><input type="button" class="button" value="c" onclick="reset()"/></td>
+                    <td><input type="button" class="button" value="=" onclick="equals()"/></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
       
 
       
@@ -1175,15 +1293,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">哲学</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">wiki</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">古希腊哲学</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">html</a>
         		</li>
       		
 		</ul>
@@ -1193,7 +1303,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2022/06/20/Plato_Theory%20of%20forms/">展开全文 >></a>
+          <a class="article-more-a" href="/2022/06/29/mine/">展开全文 >></a>
         </p>
       
 
@@ -1263,11 +1373,11 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">古希腊哲学</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">stanford</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">stanford</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">古希腊哲学</a>
         		</li>
       		
 		</ul>
@@ -1278,6 +1388,90 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2022/06/20/Aristotle%E2%80%99s%20Metaphysics/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Plato_Theory of forms" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/06/20/Plato_Theory%20of%20forms/">柏拉图：理念论|Plato:Theory of forms</a>
+    </h1>
+  
+
+        
+        <a href="/2022/06/20/Plato_Theory%20of%20forms/" class="archive-article-date">
+  	<time datetime="2022-06-19T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-06-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>理念论(The theory of Forms or theory of Ideas<a href="#1">[1]</a><a href="#2">[2]</a><a href="#3">[3]</a>)是一个柏拉图所创的哲学理论、概念或是说一种世界观，认为物质世界不像永恒、绝对、不变的理念世界那样真实。<a href="#4">[4]</a>根据这个理论，ideas在这种意义上一般被翻译成Ideas（理念）或是Forms（形式），<a href="#5">[5]</a>是所有事物的非物质的本质，而物质世界的对象和物质仅仅是对其的模仿。
+        
+          <a class="article-more-a" href="/2022/06/20/Plato_Theory%20of%20forms/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">哲学</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">古希腊哲学</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">wiki</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/06/20/Plato_Theory%20of%20forms/">展开全文 >></a>
         </p>
       
 
@@ -1780,11 +1974,11 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">wiki</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">古希腊哲学</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">古希腊哲学</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">wiki</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -1868,11 +2062,11 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">wiki</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">古希腊哲学</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">古希腊哲学</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">wiki</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -1956,15 +2150,15 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">stanford</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">古希腊哲学</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">爱利亚学派</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">stanford</a>
         		</li>
       		
 		</ul>
@@ -1975,94 +2169,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2022/05/26/%E5%B7%B4%E9%97%A8%E5%B0%BC%E5%BE%B7stanford/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-赫拉克利特wiki" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/05/26/%E8%B5%AB%E6%8B%89%E5%85%8B%E5%88%A9%E7%89%B9wiki/">赫拉克利特|Heraclitus</a>
-    </h1>
-  
-
-        
-        <a href="/2022/05/26/%E8%B5%AB%E6%8B%89%E5%85%8B%E5%88%A9%E7%89%B9wiki/" class="archive-article-date">
-  	<time datetime="2022-05-25T20:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Heraclitus of Ephesus (/ˌhɛrəˈklaɪtəs/;<a href="#1">[1]</a> Greek: Ἡράκλειτος Herakleitos, “Glory of Hera”; c. 535 – c. 475 BC,<a href="#2">[2]</a> fl. 500 BC)<a href="#3">[3]</a> was an ancient Greek, pre-Socratic, Ionian philosopher and a native of the city of Ephesus, which was then part of the Persian Empire.
-        
-          <a class="article-more-a" href="/2022/05/26/%E8%B5%AB%E6%8B%89%E5%85%8B%E5%88%A9%E7%89%B9wiki/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">哲学</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">wiki</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">古希腊哲学</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">伊奥尼亚学派</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2022/05/26/%E8%B5%AB%E6%8B%89%E5%85%8B%E5%88%A9%E7%89%B9wiki/">展开全文 >></a>
         </p>
       
 
@@ -2132,11 +2238,11 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">古希腊哲学</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">stanford</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">stanford</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">古希腊哲学</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -2151,6 +2257,94 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2022/05/26/%E8%B5%AB%E6%8B%89%E5%85%8B%E5%88%A9%E7%89%B9stanford/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-赫拉克利特wiki" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/05/26/%E8%B5%AB%E6%8B%89%E5%85%8B%E5%88%A9%E7%89%B9wiki/">赫拉克利特|Heraclitus</a>
+    </h1>
+  
+
+        
+        <a href="/2022/05/26/%E8%B5%AB%E6%8B%89%E5%85%8B%E5%88%A9%E7%89%B9wiki/" class="archive-article-date">
+  	<time datetime="2022-05-25T20:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-05-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Heraclitus of Ephesus (/ˌhɛrəˈklaɪtəs/;<a href="#1">[1]</a> Greek: Ἡράκλειτος Herakleitos, “Glory of Hera”; c. 535 – c. 475 BC,<a href="#2">[2]</a> fl. 500 BC)<a href="#3">[3]</a> was an ancient Greek, pre-Socratic, Ionian philosopher and a native of the city of Ephesus, which was then part of the Persian Empire.
+        
+          <a class="article-more-a" href="/2022/05/26/%E8%B5%AB%E6%8B%89%E5%85%8B%E5%88%A9%E7%89%B9wiki/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">哲学</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">古希腊哲学</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">wiki</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">伊奥尼亚学派</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/05/26/%E8%B5%AB%E6%8B%89%E5%85%8B%E5%88%A9%E7%89%B9wiki/">展开全文 >></a>
         </p>
       
 
@@ -2220,11 +2414,11 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">wiki</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">古希腊哲学</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">古希腊哲学</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">wiki</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -2308,11 +2502,11 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">wiki</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">古希腊哲学</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">古希腊哲学</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">wiki</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -2457,6 +2651,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">哲学</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">stanford</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">古希腊哲学</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">wiki</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">电影</a>
               </li>
              
@@ -2465,19 +2675,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">哲学</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">wiki</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">古希腊哲学</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">数据可视化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">html</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -2490,10 +2692,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">中世纪哲学</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">stanford</a>
               </li>
              
               <li class="article-tag-list-item">
