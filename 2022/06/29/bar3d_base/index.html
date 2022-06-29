@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://HoraceHou0822.github.io">
-  <title>Archives: 2021 | Sage</title>
+  <title>Python数据可视化实验1 | Sage</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Sage">
-<meta property="og:url" content="https://horacehou0822.github.io/archives/2021/index.html">
+  <meta name="description" content="Awesome-pyecharts                                            var chart_c256a233e6814aaaba6118ab3c5f8ff9 &#x3D; echarts.init(             document.getElementById(&#39;c256a233e6814aaaba6118ab3c5f8f">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python数据可视化实验1">
+<meta property="og:url" content="https://horacehou0822.github.io/2022/06/29/bar3d_base/index.html">
 <meta property="og:site_name" content="Sage">
+<meta property="og:description" content="Awesome-pyecharts                                            var chart_c256a233e6814aaaba6118ab3c5f8ff9 &#x3D; echarts.init(             document.getElementById(&#39;c256a233e6814aaaba6118ab3c5f8f">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-06-28T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-06-29T06:17:00.673Z">
 <meta property="article:author" content="Horace">
+<meta property="article:tag" content="数据可视化">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Sage" type="application/atom+xml">
@@ -158,64 +163,1084 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-bar3d_base" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Python数据可视化实验1
+    </h1>
+  
+
+        
+        <a href="/2022/06/29/bar3d_base/" class="archive-article-date">
+  	<time datetime="2022-06-28T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-06-29</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Awesome-pyecharts</title>
+            <script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts.min.js"></script>
+        <script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts-gl.min.js"></script>
+
+</head>
+<body>
+    <div id="c256a233e6814aaaba6118ab3c5f8ff9" class="chart-container" style="width:900px; height:500px;"></div>
+    <script>
+        var chart_c256a233e6814aaaba6118ab3c5f8ff9 = echarts.init(
+            document.getElementById('c256a233e6814aaaba6118ab3c5f8ff9'), 'white', {renderer: 'canvas'});
+        var option_c256a233e6814aaaba6118ab3c5f8ff9 = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "color": [
+        "#c23531",
+        "#2f4554",
+        "#61a0a8",
+        "#d48265",
+        "#749f83",
+        "#ca8622",
+        "#bda29a",
+        "#6e7074",
+        "#546570",
+        "#c4ccd3",
+        "#f05b72",
+        "#ef5b9c",
+        "#f47920",
+        "#905a3d",
+        "#fab27b",
+        "#2a5caa",
+        "#444693",
+        "#726930",
+        "#b2d235",
+        "#6d8346",
+        "#ac6767",
+        "#1d953f",
+        "#6950a1",
+        "#918597"
+    ],
+    "series": [
+        {
+            "type": "bar3D",
+            "data": [
+                [
+                    0,
+                    0,
+                    3
+                ],
+                [
+                    1,
+                    0,
+                    6
+                ],
+                [
+                    2,
+                    0,
+                    7
+                ],
+                [
+                    3,
+                    0,
+                    9
+                ],
+                [
+                    4,
+                    0,
+                    10
+                ],
+                [
+                    5,
+                    0,
+                    5
+                ],
+                [
+                    6,
+                    0,
+                    5
+                ],
+                [
+                    7,
+                    0,
+                    6
+                ],
+                [
+                    8,
+                    0,
+                    1
+                ],
+                [
+                    9,
+                    0,
+                    0
+                ],
+                [
+                    10,
+                    0,
+                    5
+                ],
+                [
+                    11,
+                    0,
+                    4
+                ],
+                [
+                    12,
+                    0,
+                    0
+                ],
+                [
+                    13,
+                    0,
+                    12
+                ],
+                [
+                    14,
+                    0,
+                    10
+                ],
+                [
+                    15,
+                    0,
+                    11
+                ],
+                [
+                    16,
+                    0,
+                    8
+                ],
+                [
+                    17,
+                    0,
+                    5
+                ],
+                [
+                    18,
+                    0,
+                    5
+                ],
+                [
+                    19,
+                    0,
+                    5
+                ],
+                [
+                    20,
+                    0,
+                    9
+                ],
+                [
+                    21,
+                    0,
+                    12
+                ],
+                [
+                    22,
+                    0,
+                    1
+                ],
+                [
+                    23,
+                    0,
+                    1
+                ],
+                [
+                    0,
+                    1,
+                    10
+                ],
+                [
+                    1,
+                    1,
+                    7
+                ],
+                [
+                    2,
+                    1,
+                    6
+                ],
+                [
+                    3,
+                    1,
+                    9
+                ],
+                [
+                    4,
+                    1,
+                    5
+                ],
+                [
+                    5,
+                    1,
+                    5
+                ],
+                [
+                    6,
+                    1,
+                    0
+                ],
+                [
+                    7,
+                    1,
+                    1
+                ],
+                [
+                    8,
+                    1,
+                    11
+                ],
+                [
+                    9,
+                    1,
+                    12
+                ],
+                [
+                    10,
+                    1,
+                    0
+                ],
+                [
+                    11,
+                    1,
+                    12
+                ],
+                [
+                    12,
+                    1,
+                    8
+                ],
+                [
+                    13,
+                    1,
+                    3
+                ],
+                [
+                    14,
+                    1,
+                    1
+                ],
+                [
+                    15,
+                    1,
+                    1
+                ],
+                [
+                    16,
+                    1,
+                    3
+                ],
+                [
+                    17,
+                    1,
+                    4
+                ],
+                [
+                    18,
+                    1,
+                    8
+                ],
+                [
+                    19,
+                    1,
+                    12
+                ],
+                [
+                    20,
+                    1,
+                    2
+                ],
+                [
+                    21,
+                    1,
+                    8
+                ],
+                [
+                    22,
+                    1,
+                    7
+                ],
+                [
+                    23,
+                    1,
+                    6
+                ],
+                [
+                    0,
+                    2,
+                    12
+                ],
+                [
+                    1,
+                    2,
+                    4
+                ],
+                [
+                    2,
+                    2,
+                    0
+                ],
+                [
+                    3,
+                    2,
+                    0
+                ],
+                [
+                    4,
+                    2,
+                    1
+                ],
+                [
+                    5,
+                    2,
+                    11
+                ],
+                [
+                    6,
+                    2,
+                    3
+                ],
+                [
+                    7,
+                    2,
+                    3
+                ],
+                [
+                    8,
+                    2,
+                    2
+                ],
+                [
+                    9,
+                    2,
+                    2
+                ],
+                [
+                    10,
+                    2,
+                    6
+                ],
+                [
+                    11,
+                    2,
+                    12
+                ],
+                [
+                    12,
+                    2,
+                    7
+                ],
+                [
+                    13,
+                    2,
+                    2
+                ],
+                [
+                    14,
+                    2,
+                    1
+                ],
+                [
+                    15,
+                    2,
+                    9
+                ],
+                [
+                    16,
+                    2,
+                    3
+                ],
+                [
+                    17,
+                    2,
+                    6
+                ],
+                [
+                    18,
+                    2,
+                    2
+                ],
+                [
+                    19,
+                    2,
+                    9
+                ],
+                [
+                    20,
+                    2,
+                    8
+                ],
+                [
+                    21,
+                    2,
+                    7
+                ],
+                [
+                    22,
+                    2,
+                    8
+                ],
+                [
+                    23,
+                    2,
+                    8
+                ],
+                [
+                    0,
+                    3,
+                    8
+                ],
+                [
+                    1,
+                    3,
+                    10
+                ],
+                [
+                    2,
+                    3,
+                    2
+                ],
+                [
+                    3,
+                    3,
+                    8
+                ],
+                [
+                    4,
+                    3,
+                    0
+                ],
+                [
+                    5,
+                    3,
+                    10
+                ],
+                [
+                    6,
+                    3,
+                    5
+                ],
+                [
+                    7,
+                    3,
+                    10
+                ],
+                [
+                    8,
+                    3,
+                    10
+                ],
+                [
+                    9,
+                    3,
+                    3
+                ],
+                [
+                    10,
+                    3,
+                    9
+                ],
+                [
+                    11,
+                    3,
+                    7
+                ],
+                [
+                    12,
+                    3,
+                    2
+                ],
+                [
+                    13,
+                    3,
+                    9
+                ],
+                [
+                    14,
+                    3,
+                    5
+                ],
+                [
+                    15,
+                    3,
+                    11
+                ],
+                [
+                    16,
+                    3,
+                    12
+                ],
+                [
+                    17,
+                    3,
+                    12
+                ],
+                [
+                    18,
+                    3,
+                    0
+                ],
+                [
+                    19,
+                    3,
+                    9
+                ],
+                [
+                    20,
+                    3,
+                    9
+                ],
+                [
+                    21,
+                    3,
+                    6
+                ],
+                [
+                    22,
+                    3,
+                    12
+                ],
+                [
+                    23,
+                    3,
+                    2
+                ],
+                [
+                    0,
+                    4,
+                    4
+                ],
+                [
+                    1,
+                    4,
+                    5
+                ],
+                [
+                    2,
+                    4,
+                    10
+                ],
+                [
+                    3,
+                    4,
+                    10
+                ],
+                [
+                    4,
+                    4,
+                    6
+                ],
+                [
+                    5,
+                    4,
+                    12
+                ],
+                [
+                    6,
+                    4,
+                    7
+                ],
+                [
+                    7,
+                    4,
+                    8
+                ],
+                [
+                    8,
+                    4,
+                    11
+                ],
+                [
+                    9,
+                    4,
+                    5
+                ],
+                [
+                    10,
+                    4,
+                    0
+                ],
+                [
+                    11,
+                    4,
+                    1
+                ],
+                [
+                    12,
+                    4,
+                    8
+                ],
+                [
+                    13,
+                    4,
+                    6
+                ],
+                [
+                    14,
+                    4,
+                    10
+                ],
+                [
+                    15,
+                    4,
+                    5
+                ],
+                [
+                    16,
+                    4,
+                    0
+                ],
+                [
+                    17,
+                    4,
+                    1
+                ],
+                [
+                    18,
+                    4,
+                    4
+                ],
+                [
+                    19,
+                    4,
+                    6
+                ],
+                [
+                    20,
+                    4,
+                    2
+                ],
+                [
+                    21,
+                    4,
+                    10
+                ],
+                [
+                    22,
+                    4,
+                    10
+                ],
+                [
+                    23,
+                    4,
+                    10
+                ],
+                [
+                    0,
+                    5,
+                    5
+                ],
+                [
+                    1,
+                    5,
+                    1
+                ],
+                [
+                    2,
+                    5,
+                    6
+                ],
+                [
+                    3,
+                    5,
+                    6
+                ],
+                [
+                    4,
+                    5,
+                    0
+                ],
+                [
+                    5,
+                    5,
+                    12
+                ],
+                [
+                    6,
+                    5,
+                    0
+                ],
+                [
+                    7,
+                    5,
+                    5
+                ],
+                [
+                    8,
+                    5,
+                    0
+                ],
+                [
+                    9,
+                    5,
+                    10
+                ],
+                [
+                    10,
+                    5,
+                    11
+                ],
+                [
+                    11,
+                    5,
+                    2
+                ],
+                [
+                    12,
+                    5,
+                    4
+                ],
+                [
+                    13,
+                    5,
+                    7
+                ],
+                [
+                    14,
+                    5,
+                    1
+                ],
+                [
+                    15,
+                    5,
+                    9
+                ],
+                [
+                    16,
+                    5,
+                    7
+                ],
+                [
+                    17,
+                    5,
+                    8
+                ],
+                [
+                    18,
+                    5,
+                    2
+                ],
+                [
+                    19,
+                    5,
+                    11
+                ],
+                [
+                    20,
+                    5,
+                    1
+                ],
+                [
+                    21,
+                    5,
+                    0
+                ],
+                [
+                    22,
+                    5,
+                    1
+                ],
+                [
+                    23,
+                    5,
+                    11
+                ]
+            ],
+            "label": {
+                "show": false,
+                "position": "top",
+                "margin": 8
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                ""
+            ],
+            "selected": {},
+            "show": true,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0
+    },
+    "visualMap": {
+        "show": true,
+        "type": "continuous",
+        "min": 0,
+        "max": 20,
+        "inRange": {
+            "color": [
+                "#50a3ba",
+                "#eac763",
+                "#d94e5d"
+            ]
+        },
+        "calculable": true,
+        "inverse": false,
+        "splitNumber": 5,
+        "orient": "vertical",
+        "showLabel": true,
+        "itemWidth": 20,
+        "itemHeight": 140,
+        "borderWidth": 0
+    },
+    "xAxis3D": {
+        "data": [
+            "12a",
+            "1a",
+            "2a",
+            "3a",
+            "4a",
+            "5a",
+            "6a",
+            "7a",
+            "8a",
+            "9a",
+            "10a",
+            "11a",
+            "12p",
+            "1p",
+            "2p",
+            "3p",
+            "4p",
+            "5p",
+            "6p",
+            "7p",
+            "8p",
+            "9p",
+            "10p",
+            "11p"
+        ],
+        "nameGap": 20,
+        "type": "category",
+        "axisLabel": {
+            "margin": 8
+        }
+    },
+    "yAxis3D": {
+        "data": [
+            "Saturday",
+            "Friday",
+            "Thursday",
+            "Wednesday",
+            "Tuesday",
+            "Monday",
+            "Sunday"
+        ],
+        "nameGap": 20,
+        "type": "category",
+        "axisLabel": {
+            "margin": 8
+        }
+    },
+    "zAxis3D": {
+        "nameGap": 20,
+        "type": "value",
+        "axisLabel": {
+            "margin": 8
+        }
+    },
+    "grid3D": {
+        "boxWidth": 200,
+        "boxHeight": 100,
+        "boxDepth": 80,
+        "viewControl": {
+            "autoRotate": false,
+            "autoRotateSpeed": 10,
+            "rotateSensitivity": 1
+        }
+    },
+    "title": [
+        {
+            "text": "Bar3D-\u57fa\u672c\u793a\u4f8b",
+            "padding": 5,
+            "itemGap": 10
+        }
+    ]
+};
+        chart_c256a233e6814aaaba6118ab3c5f8ff9.setOption(option_c256a233e6814aaaba6118ab3c5f8ff9);
+    </script>
+</body>
+</html>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/04/02/bar3d_base/" class="archive-article-date">
-  	<time datetime="2021-04-02T02:55:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-02</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">数据可视化</a>
+        		</li>
+      		
+		</ul>
+	</div>
 
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://horacehou0822.github.io/2022/06/29/bar3d_base/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/04/02/bar3d_base/" class="archive-article-date">
-  	<time datetime="2021-04-02T02:55:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-02</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2022/06/20/Plato_Theory%20of%20forms/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">柏拉图：理念论|Plato:Theory of forms</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    无目录
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="bar3d_base" data-title="Python数据可视化实验1" data-url="https://HoraceHou0822.github.io/2022/06/29/bar3d_base/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -238,8 +1263,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
@@ -316,6 +1341,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">电影</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">电影理论</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">哲学</a>
               </li>
              
@@ -328,27 +1361,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">电影</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">电影理论</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">stanford</a>
+                <a href="javascript:void(0)" class="js-tag color1">数据可视化</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">爱利亚学派</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">mine</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">伊奥尼亚学派</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -357,6 +1374,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">中世纪哲学</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">stanford</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">伊奥尼亚学派</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">mine</a>
               </li>
              
               <li class="article-tag-list-item">
