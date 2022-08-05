@@ -16,7 +16,7 @@
 <meta property="og:description" content="摘要：丽水是浙江省下的一个市，近年来在“绿水青山就是金山银山”的口号下发展迅速，人口流动剧烈，产业结构也有翻天覆地的变化。作者希望通过对一些数据的整理与可视化，来展示丽水市的劳动力产业就业状况的变化趋势。 关键词：丽水；劳动力；就业；三大产业">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-07-23T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-07-24T12:22:55.022Z">
+<meta property="article:modified_time" content="2022-08-05T14:21:16.572Z">
 <meta property="article:author" content="Horace">
 <meta property="article:tag" content="其它">
 <meta property="article:tag" content="数据统计">
@@ -189,7 +189,7 @@
 <p><em><strong>关键词</strong></em>：丽水；劳动力；就业；三大产业<span id="more"></span></p>
 <h1 id="项目背景"><a href="#项目背景" class="headerlink" title="项目背景"></a>项目背景</h1><p>丽（lí）水，古称处州，浙江省辖陆地面积最大的地级市；位于长江三角洲地区，浙江省西南部，坐标东经118°41′～120°26′和北纬27°25′～28°57′之间，地势以中山、丘陵地貌为主，由西南向东北倾斜；境设1个市辖区：莲都区，7县：青田县、缙云县、遂昌县、松阳县、云和县、庆元县、景宁县，代管1县级市：龙泉市；市域面积1.73万平方公里。2021年末全市户籍人口269.97万人。</p>
 <p>丽水被誉为“浙江绿谷”，境内海拔1000米以上的山峰有3573座，龙泉市凤阳山黄茅尖海拔1929米，庆元县百山祖海拔1856.7米，分别为浙江省第一、第二高峰。丽水人属江浙民系使用吴语，丽水文化属吴越文化。</p>
-<p>2005年1月，丽水市被命名为第三批国家级生态示范区；2009年12月，相继被命名为“中国优秀旅游城市”、“中国优秀生态旅游城市”。2010年12月23日，浙江省关注森林组委会正式发文授予丽水“浙江省森林城市”称号。丽水获评首批国家级生态保护与建设示范区。2017年11月，获全国文明城市称号。2017年中国地级市全面小康指数排名第47。2018年11月，获评2018中国地级市全面小康指数46名。2018年12月12日，被命名为第二批“绿水青山就是金山银山”实践创新基地。</p>
+<p>丽水市是全国文明城市、国家级生态示范区、国家级生态保护与建设示范区、中国优秀旅游城市、中国优秀生态旅游城市、浙江省森林城市、浙江高质量发展建设共同富裕示范区首批试点之一。2005年1月，丽水市被命名为第三批国家级生态示范区；2009年12月，相继被命名为“中国优秀旅游城市”、“中国优秀生态旅游城市”。2010年12月23日，浙江省关注森林组委会正式发文授予丽水“浙江省森林城市”称号。丽水获评首批国家级生态保护与建设示范区。2017年11月，获全国文明城市称号。2017年中国地级市全面小康指数排名第47。2018年11月，获评2018中国地级市全面小康指数46名。2018年12月12日，被命名为第二批“绿水青山就是金山银山”实践创新基地。</p>
 <h1 id="项目内容"><a href="#项目内容" class="headerlink" title="项目内容"></a>项目内容</h1><h2 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h2><ul>
 <li>试图得到什么数据，解决什么问题</li>
 </ul>
@@ -199,25 +199,79 @@
 <h2 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h2><ul>
 <li>陈述数据收集的标准。</li>
 </ul>
+<h2 id="数据分析与可视化"><a href="#数据分析与可视化" class="headerlink" title="数据分析与可视化"></a>数据分析与可视化</h2><p><em><strong>总人口</strong></em><br><em>2001-2020年间总人口</em></p>
+<div id="myechartsss2" style= "location: relative; width:100%; height:400px;">
+</div>
+<script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.3.3/dist/echarts.min.js"></script>
+<script type="text/javascript">
+  var dom = document.getElementById("myechartsss2");
+  var myChart = echarts.init(dom, null, {
+    renderer: 'canvas',
+    useDirtyRect: false
+  });
+  var app = {};
+  var option;
+  option = {
+// title: {
+//   text: 'Stacked Area Chart'
+// },
+tooltip: {
+  trigger: 'axis',
+  axisPointer: {
+    type: 'cross',
+    label: {
+      backgroundColor: '#6a7985'
+    }
+  }
+},
+legend: {
+  data: ['年户籍人口']
+},
+// toolbox: {
+//   feature: {
+//     saveAsImage: {}
+//   }
+// },
+grid: {
+  left: '3%',
+  right: '4%',
+  bottom: '3%',
+  containLabel: true
+},
+xAxis: [
+  {
+    type: 'category',
+    boundaryGap: false,
+    data: ["2001","2002","2003","2004","2005", "2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"]
+  }
+],
+yAxis: [
+  {
+    type: 'value'
+  }
+],
+series: [
+  {
+    name: '年户籍人口',
+    type: 'line',
+    stack: 'Total',
+    areaStyle: {},
+    emphasis: {
+      focus: 'series'
+    },
+    data:  [2485800,2487300,2492800,2494000,2506600,2513900,2525300,2539900,2554300,2573900,2596500,2513000,2626000,2639000,2657000,2663800,2680000,2690000,2700000,2710000]
+  },
+]
+};
+  if (option && typeof option === 'object') {
+    myChart.setOption(option);
+  }
+  window.addEventListener('resize', myChart.resize);
+</script>
 
-
-	<div class="row">
-    <embed src="/img/浙江省城市各产业人口统计.pdf" width="100%" height="550" type="application/pdf">
-	</div>
-
-
-
-
-
-
-	<div class="row">
-    <embed src="/img/代码.pdf" width="100%" height="550" type="application/pdf">
-	</div>
-
-
-
-
-<h2 id="数据分析与可视化"><a href="#数据分析与可视化" class="headerlink" title="数据分析与可视化"></a>数据分析与可视化</h2><p><em><strong>三大产业</strong></em><br><em>2001-2020年间一、二、三产业劳动力人口变化</em></p>
+<p>从<em>2001-2020年间总人口</em>图表中易得知，丽水市自2001年起人口稳步上升，从2485800人到2020年的2710000，2005年前上升缓慢，2005年以后上升速度显著加快，影响2005年人口流入加快的可能因素是丽水在2005年1月被命名为第三批国家级生态示范区，显著扩大了丽水环境好的名声。其中2012年的统计信息因未知原因存在异常下陷，暂时作为无效数据处理。</p>
+<hr>
+<p><em><strong>三大产业</strong></em><br><em>2001-2020年间一、二、三产业劳动力人口变化</em></p>
 <div id="myechartsss1" style= "location: relative; width:100%; height:400px;">
 </div>
 <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.3.3/dist/echarts.min.js"></script>
@@ -307,77 +361,11 @@ series: [
   window.addEventListener('resize', myChart.resize);
 </script>
 
-<hr>
-<p><em><strong>总人口</strong></em><br><em>2001-2020年间总人口</em></p>
-<div id="myechartsss2" style= "location: relative; width:100%; height:400px;">
-</div>
-<script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.3.3/dist/echarts.min.js"></script>
-<script type="text/javascript">
-  var dom = document.getElementById("myechartsss2");
-  var myChart = echarts.init(dom, null, {
-    renderer: 'canvas',
-    useDirtyRect: false
-  });
-  var app = {};
-  var option;
-  option = {
-// title: {
-//   text: 'Stacked Area Chart'
-// },
-tooltip: {
-  trigger: 'axis',
-  axisPointer: {
-    type: 'cross',
-    label: {
-      backgroundColor: '#6a7985'
-    }
-  }
-},
-legend: {
-  data: ['年户籍人口']
-},
-// toolbox: {
-//   feature: {
-//     saveAsImage: {}
-//   }
-// },
-grid: {
-  left: '3%',
-  right: '4%',
-  bottom: '3%',
-  containLabel: true
-},
-xAxis: [
-  {
-    type: 'category',
-    boundaryGap: false,
-    data: ["2001","2002","2003","2004","2005", "2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020"]
-  }
-],
-yAxis: [
-  {
-    type: 'value'
-  }
-],
-series: [
-  {
-    name: '年户籍人口',
-    type: 'line',
-    stack: 'Total',
-    areaStyle: {},
-    emphasis: {
-      focus: 'series'
-    },
-    data:  [2485800,2487300,2492800,2494000,2506600,2513900,2525300,2539900,2554300,2573900,2596500,2513000,2626000,2639000,2657000,2663800,2680000,2690000,2700000,2710000]
-  },
-]
-};
-  if (option && typeof option === 'object') {
-    myChart.setOption(option);
-  }
-  window.addEventListener('resize', myChart.resize);
-</script>
-
+<p>从<em>2001-2020年间一、二、三产业劳动力人口变化</em>图表中得知，总劳动人口总体提升，同样在2005年开始增长速度加快，这离不开丽水市人口流入加快的关系。其中2005年第二、三产业的部分具体产业人数的数据丢失，导致有异常下陷的发生，作无效数据处理。</p>
+<p>（点击图标正上方的各个产业的按钮可以改变图标状态）</p>
+<p>其中，第一产业急速下跌，从2001年的4400人下降到2020年的454人，一方面可能是由于丽水对于第一产业的政策收缩，例如为了生态环境而颁布的退耕还林、退田还湖一类的政策；另一方面可能是由于农民为求更好的出路而发生大规模的产业转移，从事第二、三产业的活动。</p>
+<p>第二产业则在总体上呈A型，从2001年33100人开始迅速提升，到2012年57700人到达人数顶峰，接着从2013年开始迅速回落，2015年后基本稳定在42000人上下，特别在2017和2018两年降至40000-41000左右，达到2008年以来的最低。其中的原因可能是丽水市在2014年被水利部列为第二批水生态文明城市建设试点，因此大力收缩第二产业，改善水资源情况。第二产业的收缩持续到2018年，可能的原因主要是政治上对于丽水市生态环境保护方面的引导，例如：2017年12月获评“2017美丽山水城市”，2018年12月被命名为第二批“绿水青山就是金山银山”实践创新基地。</p>
+<p>第三产业在丽水的三大产业中占比最大，并稳步提升，从2001年89000人到2020年151082人。</p>
 <hr>
 <p><em><strong>从业人员与失业人员</strong></em><br><em>城镇单位从业人员&amp;城镇私营和个体从业人员&amp;城镇失业人员</em></p>
 <div id="myechartsss3" style= "location: relative; width:100%; height:400px;">
@@ -469,6 +457,9 @@ series: [
   window.addEventListener('resize', myChart.resize);
 </script>
 
+<p>城镇的单位人员数量有轻微增长，总体上保持在150000人上下。</p>
+<p>但是城镇私营和个体从业人员的数量变化较大，从2001年101496人一路飙升到2017年540254人，紧接着急速下降至2020年257231人（2019年数据缺失），其中2008年有异常突起。</p>
+<p>城镇失业人员一直保持较低占比，但可能由于人口基数的上升，失业人数相应有所上升，从2001年5005人到2020年11442人，其中2010年到2011年、2018年到2019年有较大幅度的跃升，分别从6546人跃升到9703人，从8724人跃升到11503人。</p>
 <hr>
 <p><em><strong>第二产业</strong></em><br><em>第二产业劳动力人口变化</em></p>
 <div id="myechartsss4" style= "location: relative; width:100%; height:400px;">
@@ -645,6 +636,10 @@ series: [
   window.addEventListener('resize', myChart.resize);
 </script>
 
+<p>第二产业当中，制造业占比最大，采矿业占比最小。其中电力、热力、燃气及水生产和供应业在2005年数据缺失，建筑业在2005年数据缺失。</p>
+<p>采矿业总体呈断崖式下跌，从最高2003年2000人跌到最低2018年188人。其中2012年到2013年之间有较显著的骤降，从1000人降到200人。在2013年之后稳定在500人以下。</p>
+<p>制造业在2001年到2012年间呈稳步上升的趋势，从21200人上升至38600人，随之下降，至2017年27424人到最低。2014年后稳定在30000人上下。建筑业与制造业的情形相类似，从2001年4900人开始持续上升，在2013年到达最高13200人，并随之迅速下跌，至2020年5839人。</p>
+<p>电力、热力等生产供应业人数同样在前期稳步提升，从2001年5500人到2008年6400人，随后跃升到2009年8400人，并在2009年到2014年间稳定在8000人上下，2015年后逐渐下降，至2020年5524人。</p>
 <hr>
 <p><em><strong>第三产业</strong></em><br><em>第三产业劳动力人口变化</em></p>
 <div id="myechartsss5" style= "location: relative; width:100%; height:400px;">
@@ -1114,6 +1109,13 @@ series: [
   window.addEventListener('resize', myChart.resize);
 </script>
 
+<p>第三产业中，占比最大的是教育业和公共管理/社会组织。2008年前的部分数据有较大出入，因此部分产业选择从2008年开始分析。</p>
+<p>教育业保持着稳定的人数，总体在30000人上下。2004年开始稳步提升，2011年后提升速度显著提升。</p>
+<p>公共管理类人数持续提升，从2001年22200人提升到2020年43266人。租赁服务类总体呈上升趋势，在2009-2013年间有两次高潮，2020年急速上升至8088人。金融业、水利等公共设施管理类、卫生/社会工作人数持续提升。</p>
+<p>科学研究类在2012年前较稳定，2013年开始上升，至2016年到最高3840人，随后回落。</p>
+<p>住宿/餐饮业在2011年前保持1500人上下，在2012年有剧烈的跃升，从2011年1700人跃升到2012年2700人，随后下降，至2020年1968人。</p>
+<p>计算机类、房地产业、文化/体育/娱乐总体较稳定。</p>
+<p>批发零售数总体呈下跌趋势，在2012、2013两年有异常突起。交通运输也呈下降趋势。</p>
 <hr>
 <h1 id="海报设计"><a href="#海报设计" class="headerlink" title="海报设计"></a>海报设计</h1><ul>
 <li>数据可视化海报</li>
@@ -1121,6 +1123,22 @@ series: [
 <h1 id="项目总结"><a href="#项目总结" class="headerlink" title="项目总结"></a>项目总结</h1><ul>
 <li>总结数据分析结果</li>
 </ul>
+<h1 id="附件"><a href="#附件" class="headerlink" title="附件"></a>附件</h1>
+
+	<div class="row">
+    <embed src="/img/浙江省城市各产业人口统计.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+
+
+
+
+	<div class="row">
+    <embed src="/img/代码.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
 
       
 
@@ -1241,7 +1259,7 @@ series: [
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E8%83%8C%E6%99%AF"><span class="toc-number">1.</span> <span class="toc-text">项目背景</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E5%86%85%E5%AE%B9"><span class="toc-number">2.</span> <span class="toc-text">项目内容</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90"><span class="toc-number">2.1.</span> <span class="toc-text">问题分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E5%88%86%E5%B7%A5"><span class="toc-number">2.2.</span> <span class="toc-text">项目分工</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E6%9D%A5%E6%BA%90"><span class="toc-number">2.3.</span> <span class="toc-text">数据来源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86"><span class="toc-number">2.4.</span> <span class="toc-text">数据处理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B8%8E%E5%8F%AF%E8%A7%86%E5%8C%96"><span class="toc-number">2.5.</span> <span class="toc-text">数据分析与可视化</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B5%B7%E6%8A%A5%E8%AE%BE%E8%AE%A1"><span class="toc-number">3.</span> <span class="toc-text">海报设计</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93"><span class="toc-number">4.</span> <span class="toc-text">项目总结</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E8%83%8C%E6%99%AF"><span class="toc-number">1.</span> <span class="toc-text">项目背景</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E5%86%85%E5%AE%B9"><span class="toc-number">2.</span> <span class="toc-text">项目内容</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90"><span class="toc-number">2.1.</span> <span class="toc-text">问题分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E5%88%86%E5%B7%A5"><span class="toc-number">2.2.</span> <span class="toc-text">项目分工</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E6%9D%A5%E6%BA%90"><span class="toc-number">2.3.</span> <span class="toc-text">数据来源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86"><span class="toc-number">2.4.</span> <span class="toc-text">数据处理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E4%B8%8E%E5%8F%AF%E8%A7%86%E5%8C%96"><span class="toc-number">2.5.</span> <span class="toc-text">数据分析与可视化</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B5%B7%E6%8A%A5%E8%AE%BE%E8%AE%A1"><span class="toc-number">3.</span> <span class="toc-text">海报设计</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93"><span class="toc-number">4.</span> <span class="toc-text">项目总结</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%99%84%E4%BB%B6"><span class="toc-number">5.</span> <span class="toc-text">附件</span></a></li></ol>
                     </div>
                 </span>
             </div>
